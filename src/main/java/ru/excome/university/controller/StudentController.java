@@ -1,11 +1,12 @@
 package ru.excome.university.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import ru.excome.university.domain.Student;
 import ru.excome.university.service.StudentService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/student")
@@ -17,8 +18,17 @@ public class StudentController {
     }
 
     @GetMapping
-    public String student(){
+    public String student(Model model){
+        model.addAttribute("students", studentService.loadDataTable());
+
         return "student";
+    }
+
+    @GetMapping("{student}")
+    public String studentEdit(@PathVariable Long student, Model model) {
+        model.addAttribute("student", studentService.loadStudent(student));
+
+        return "studentEdit";
     }
 
     @PostMapping
@@ -26,10 +36,19 @@ public class StudentController {
             @RequestParam String firstname,
             @RequestParam String surname,
             @RequestParam String patronymic,
-            @RequestParam Integer age
+            @RequestParam Integer age,
+            Model model
     ) {
-       studentService.addStudent(firstname, surname, patronymic, age);
+        studentService.addStudent(firstname, surname, patronymic, age);
+  //      model.addAttribute("students", studentService.loadDataTable());
 
-        return "student";
+        return "redirect:/student";
+    }
+
+    @PostMapping("delete")
+    public String deleteStudent(@RequestParam Long studentId){
+        studentService.deleteStudent(studentId);
+
+        return "redirect:/student";
     }
 }
