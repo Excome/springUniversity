@@ -16,17 +16,20 @@ public class StudentService{
         this.studentRepo = studentRepo;
     }
 
-    public Optional<Student> loadStudent(Long studentId) {
-        return studentRepo.findById(studentId);
+    public Student loadStudent(Long studentId) {
+        return studentRepo.findStudentById(studentId);
     }
 
-    public List<Student> loadDataTable() {
-        return studentRepo.findAll();
+    public List<Student> getAllStudents() {
+        return studentRepo.findAllStudents();
     }
 
     public void addStudent(String firstname, String surname, String patronymic, Integer age){
-        Student student = new Student(firstname, surname, patronymic, age);
-        studentRepo.save(student);
+        try {
+            Student student = new Student(firstname, surname, patronymic, age);
+            studentRepo.save(student);
+        }
+        catch (Exception ex) {}
     }
 
     public void deleteStudent(Long studentId) {
@@ -34,5 +37,11 @@ public class StudentService{
             studentRepo.deleteById(studentId);
         }
         catch (Exception ex) {}
+    }
+
+    public void updateStudent(String surname, String firstname, String patronymic, Integer age, Long studentId) {
+
+            studentRepo.updateById(surname, firstname, patronymic, age, studentId);
+
     }
 }

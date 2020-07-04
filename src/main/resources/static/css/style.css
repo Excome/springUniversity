@@ -1,0 +1,22 @@
+body {
+    border-color: black;
+}
+tbody {
+    display:block;
+    max-height:500px;
+    overflow-y:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+    width: calc( 100% - 1em )
+}
+
+.deleteBtn {
+    background-color: red;
+    border-color: red;
+    float: right;
+}

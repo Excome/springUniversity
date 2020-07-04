@@ -1,20 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Sweater</title>
-</head>
-<body>
-<h3><a href="/student">Выйти</a></h3>
-<div style="width: 215px; border: black solid 2px; padding: 3px">
+<#import "parts/common.ftlh" as c>
+<@c.page>
+<div class="container">
     <h3>Карточка студента</h3>
-    <form action="/student/#{student.id}" method="post">
-        <div><input type="text" name="surname" value="${student.surname}" required placeholder="Фамилия" ></div>
-        <div><input type="text" name="firstname" value="" required placeholder="Имя"></div>
-        <div><input type="text" name="patronymic" value="" required placeholder="Отчество"></div>
-        <div><input type="number" name="age" value="" required placeholder="Возраст"></div>
-        <button type="Изменить">Изменить</button>
+    <form action="/student/update" method="post">
+        <div class="form-group">
+            <label for="surname">Фамилия</label>
+            <input class="form-control" type="text" name="surname" value="${student.surname}" required>
+        </div>
+        <div class="form-group">
+            <label for="firstname">Имя</label>
+            <input class="form-control" type="text" name="firstname" value="${student.firstname}" required>
+            </div>
+        <div class="form-group">
+            <label for="patronymic">Отчество</label>
+            <input class="form-control" type="text" name="patronymic" value="${student.patronymic}" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Возраст</label>
+            <input class="form-control" type="number" name="age" value="${student.age}" required>
+        </div>
+        <input type="hidden" name="studentId" value="${student.id}">
+        <button type="submit" class="btn btn-primary" style="float: left">Изменить</button>
+    </form>
+    <form action="/student/delete" method="post">
+        <input type="hidden" name="studentId" value="${student.id}">
+        <button type="submit" class="deleteBtn btn btn-primary ml-2">Удалить</button>
     </form>
 </div>
-</body>
-</html>
+</@c.page>
