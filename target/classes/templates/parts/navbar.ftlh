@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/student">Студенты<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/group">Группы<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
     </div>
 </nav>

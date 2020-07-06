@@ -13,12 +13,20 @@ public class Student {
     private String patronymic;
     private Integer age;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    private GroupStud groupStud;
+
     public Student() {}
-    public Student(String firstname, String surname, String patronymic, Integer age) {
+    public Student(String firstname, String surname, String patronymic, Integer age, GroupStud groupStud) {
         this.firstname = firstname;
         this.surname = surname;
         this.patronymic = patronymic;
         this.age = age;
+        this.groupStud = groupStud;
+    }
+
+    public String getGroupName(){
+        return groupStud != null ? groupStud.getName() : "<none>";
     }
 
     public Long getId() {
@@ -60,4 +68,6 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+
 }

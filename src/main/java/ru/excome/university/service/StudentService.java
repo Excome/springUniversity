@@ -1,12 +1,11 @@
 package ru.excome.university.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.excome.university.domain.GroupStud;
 import ru.excome.university.domain.Student;
 import ru.excome.university.repository.StudentRepo;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StudentService{
@@ -24,12 +23,11 @@ public class StudentService{
         return studentRepo.findAllStudents();
     }
 
-    public void addStudent(String firstname, String surname, String patronymic, Integer age){
+    public void addStudent(String firstname, String surname, String patronymic, Integer age, GroupStud groupStud){
         try {
-            Student student = new Student(firstname, surname, patronymic, age);
+            Student student = new Student(firstname, surname, patronymic, age, groupStud);
             studentRepo.save(student);
-        }
-        catch (Exception ex) {}
+        }catch (Exception ex){}
     }
 
     public void deleteStudent(Long studentId) {
@@ -39,9 +37,9 @@ public class StudentService{
         catch (Exception ex) {}
     }
 
-    public void updateStudent(String surname, String firstname, String patronymic, Integer age, Long studentId) {
+    public void updateStudent(String surname, String firstname, String patronymic, Integer age, GroupStud groupStud, Long studentId) {
 
-            studentRepo.updateById(surname, firstname, patronymic, age, studentId);
+        studentRepo.updateById(surname, firstname, patronymic, age, groupStud, studentId);
 
     }
 }
