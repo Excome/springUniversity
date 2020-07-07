@@ -9,27 +9,27 @@
                     <th>Имя</th>
                     <th>Отчество</th>
                     <th>Возвраст</th>
-                    <th>Группа</th>
+                    <th>Ученая степень</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <#list students as student>
+                <#list teachers as teacher>
                     <tr>
-                        <td>${student.surname}</td>
-                        <td>${student.firstname}</td>
-                        <td>${student.patronymic}</td>
-                        <td>${student.age}</td>
-                        <td>${student.groupName}</td>
-                        <td><a href="/student/${student.id}">Изменить</a></td>
+                        <td>${teacher.surname}</td>
+                        <td>${teacher.firstname}</td>
+                        <td>${teacher.patronymic}</td>
+                        <td>${teacher.age}</td>
+                        <td>${teacher.degree}</td>
+                        <td><a href="/teacher/${teacher.id}">Изменить</a></td>
                     </tr>
                 </#list>
                 </tbody>
             </table>
         </div>
         <div class="col">
-            <h3>Добавить студента</h3>
-            <form action="/student" method="post">
+            <h3>Добавить преподавателя</h3>
+            <form action="/teacher" method="post">
                 <div class="form-group">
                     <label for="surname">Фамилия</label>
                     <input class="form-control" type="text" name="surname" required>
@@ -47,11 +47,9 @@
                     <input class="form-control" type="number" name="age" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Группа</label>
-                    <select name="groupStudId" class="form-control" id="exampleFormControlSelect1">
-                        <#list groups as group>
-                            <option value="${group.id}">${group.faculty}: ${group.name}</option>
-                        </#list>
+                    <label for="exampleFormControlSelect1">Ученая степень</label>
+                    <select name="degree" class="form-control" id="exampleFormControlSelect1">
+                        <option value="тест">тест</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Добавить</button>

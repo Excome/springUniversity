@@ -18,6 +18,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/group">Группы<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/teacher">Преподаватели<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/subject">Предметы<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -30,19 +30,19 @@
         <div class="col">
             <h3>Добавить студента</h3>
             <form action="/student" method="post">
-                <div class="form-groupStud">
+                <div class="form-group">
                     <label for="surname">Фамилия</label>
                     <input class="form-control" type="text" name="surname" required>
                 </div>
-                <div class="form-groupStud">
+                <div class="form-group">
                     <label for="firstname">Имя</label>
                     <input class="form-control" type="text" name="firstname" required>
                 </div>
-                <div class="form-groupStud">
+                <div class="form-group">
                     <label for="patronymic">Отчество</label>
                     <input class="form-control" type="text" name="patronymic" required>
                 </div>
-                <div class="form-groupStud">
+                <div class="form-group">
                     <label for="age">Возраст</label>
                     <input class="form-control" type="number" name="age" required>
                 </div>
