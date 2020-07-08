@@ -2,10 +2,7 @@ package ru.excome.university.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.excome.university.service.TimetableService;
 
 import java.text.ParseException;
@@ -30,6 +27,15 @@ public class TimetableController {
         return "timetable";
     }
 
+    @GetMapping("{timetable}")
+    public String timetableEdit(@PathVariable Long timetable, Model model){
+        model.addAttribute("timetable", timetableService.getTimetableById(timetable));
+        model.addAttribute("subjects", timetableService.getSubjects());
+        model.addAttribute("teachers", timetableService.getTeachers());
+        model.addAttribute("groups", timetableService.getGroups());
+        return "timetableEdit";
+    }
+
     @PostMapping
     public String addTimetable(
         @RequestParam Long subjectId,
@@ -40,6 +46,27 @@ public class TimetableController {
     ) throws ParseException {
 
         timetableService.addTimetable(subjectId, teacherId, groupId, room, datetime);
+
+        return "redirect:/timetable";
+    }
+
+    @PostMapping("update")
+    public String updateTimetable(
+            @RequestParam Long subjectId,
+            @RequestParam Long teacherId,
+            @RequestParam Long groupId,
+            @RequestParam String room,
+            @RequestParam String datetime,
+            @RequestParam Long timetableId
+    ) throws ParseException {
+        timetableService.updateTimetable(subjectId, teacherId, groupId, room, datetime, timetableId);
+
+        return "redirect:/timetable";
+    }
+
+    @PostMapping("delete")
+    public String deleteTimetable(@RequestParam Long timetableId){
+        timetableService.deleteTimetableById(timetableId);
 
         return "redirect:/timetable";
     }
