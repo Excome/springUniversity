@@ -1,7 +1,7 @@
 <#import "parts/common.ftlh" as c>
 <@c.page>
     <div class="row">
-        <div class="col-8">
+        <div class="col-9">
             <table class="table" style="text-align: center">
                 <thead class="thead-dark">
                 <tr>
@@ -17,7 +17,7 @@
                         <td>${subject.type?string("Техническая наука", "Гуманитарная наука")}</td>
                         <td>${subject.name}</td>
                         <td>${subject.hoursPerWeek}</td>
-                        <td><a href="/subject/${subject.id}">Изменить</a></td>
+                        <td><button type="button" class="btn btn-warning"><a style="color: white; text-decoration: none" href="/subject/${subject.id}">Изменить</a></button></td>
                     </tr>
                 </#list>
                 </tbody>

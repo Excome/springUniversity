@@ -16,11 +16,11 @@
                 <input class="form-control" type="text" name="name" value="${group.name}" required>
             </div>
             <input type="hidden" name="groupId" value="${group.id}">
-            <button type="submit" class="btn btn-primary" style="float: left">Изменить</button>
+            <button type="submit" class="btn btn-success" style="float: left">Изменить</button>
         </form>
         <form action="/group/delete" method="post">
             <input type="hidden" name="groupId" value="${group.id}">
-            <button type="submit" class="deleteBtn btn btn-primary ml-2">Удалить</button>
+            <button type="submit" class="btn btn-danger ml-2" style="float: right">Удалить</button>
         </form>
     </div>
 </@c.page>

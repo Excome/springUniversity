@@ -1,7 +1,7 @@
 <#import "parts/common.ftlh" as c>
 <@c.page>
     <div class="row">
-        <div class="col-8">
+        <div class="col-9">
             <table class="table" style="text-align: center">
                 <thead class="thead-dark">
                 <tr>
@@ -21,7 +21,7 @@
                         <td>${student.patronymic}</td>
                         <td>${student.age}</td>
                         <td>${student.groupName}</td>
-                        <td><a href="/student/${student.id}">Изменить</a></td>
+                        <td><button type="button" class="btn btn-warning"><a style="color: white; text-decoration: none" href="/student/${student.id}">Изменить</a></button></td>
                     </tr>
                 </#list>
                 </tbody>

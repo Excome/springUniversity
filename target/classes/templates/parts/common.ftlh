@@ -11,9 +11,18 @@
         <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     </head>
     <body>
-    <#include "navbar.ftlh">
-    <div class="container-fluid my-5 px-5">
-        <#nested>
+    <div class="content">
+        <#include "navbar.ftlh">
+        <div class="container-fluid mt-5 px-5">
+            <div class="mainContent">
+                <#nested>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_text">Developed and copyrighted by Max Peshekhonov (Excome), NNGASU-IS-27 <br>
+                GitHub: <a href="">Excome</a>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
