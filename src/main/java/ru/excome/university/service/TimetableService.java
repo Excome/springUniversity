@@ -7,10 +7,9 @@ import ru.excome.university.domain.Teacher;
 import ru.excome.university.domain.Timetable;
 import ru.excome.university.repository.TimetableRepo;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.List;
 
 @Service
 public class TimetableService {

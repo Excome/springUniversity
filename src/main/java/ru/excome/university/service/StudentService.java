@@ -19,6 +19,10 @@ public class StudentService{
         return studentRepo.findStudentById(studentId);
     }
 
+    public Student getStudentById(Long sutdentId){
+        return studentRepo.findStudentById(sutdentId);
+    }
+
     public List<Student> getAllStudents() {
         return studentRepo.findAllStudents();
     }

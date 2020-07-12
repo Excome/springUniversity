@@ -21,7 +21,7 @@
     </div>
     <div class="footer">
         <div class="footer_text">Developed and copyrighted by Max Peshekhonov (Excome), NNGASU-IS-27 <br>
-                GitHub: <a href="">Excome</a>
+                GitHub: <a href="https://github.com/excome" target="_blank">Excome</a>
         </div>
     </div>
     <!-- Optional JavaScript -->
