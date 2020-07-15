@@ -74,6 +74,7 @@
                     <label for="exampleFormControlSelect1">Дата</label>
                     <input class="form-control" type="date" name="date" required>
                 </div>
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
                 <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>

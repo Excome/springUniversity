@@ -28,11 +28,5 @@
                 1 days ago
             </div>
         </div>
-
-        <div class="row">
-            <div class="col">
-
-            </div>
-        </div>
     </div>
 </@c.page>

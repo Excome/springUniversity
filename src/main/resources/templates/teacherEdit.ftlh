@@ -26,10 +26,12 @@
                 </select>
             </div>
             <input type="hidden" name="teacherId" value="${teacher.id}">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit" class="btn btn-success" style="float: left">Изменить</button>
         </form>
         <form action="/teacher/delete" method="post">
             <input type="hidden" name="teacherId" value="${teacher.id}">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
             <button type="submit" class="btn btn-danger ml-2" style="float: right">Удалить</button>
         </form>
     </div>

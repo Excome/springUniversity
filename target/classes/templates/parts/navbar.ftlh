@@ -30,6 +30,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/subject">Предметы<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <button type="submit" class="btn btn-outline-secondary">Выход</button>
+                </form>
+            </li>
         </ul>
     </div>
 </nav>

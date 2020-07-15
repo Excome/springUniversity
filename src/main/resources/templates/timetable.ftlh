@@ -62,6 +62,7 @@
                     <label for="exampleFormControlSelect1">Дата и время занятия</label>
                     <input class="form-control" type="datetime-local" name="datetime" required>
                 </div>
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
                 <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>

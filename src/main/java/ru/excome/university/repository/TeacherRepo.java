@@ -16,6 +16,7 @@ public interface TeacherRepo extends JpaRepository<Teacher, Long> {
     List<Teacher> findAll();
 
     Teacher findTeacherById(Long teacherID);
+    Teacher findTeacherByUsername(String username);
 
     @Modifying
     @Transactional

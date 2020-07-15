@@ -54,6 +54,7 @@
                         </#list>
                     </select>
                 </div>
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
                 <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>
