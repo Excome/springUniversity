@@ -22,7 +22,7 @@
                     P.S.S хз что тут еще писать пока так (-: (с) excome
 
                 </p>
-                <a href="https://github.com/excome" target="_blank" class="btn btn-primary">Visit My GitHub</a>
+                <a href="https://github.com/excome" class="btn btn-primary">Visit My GitHub</a>
             </div>
             <div class="card-footer text-muted">
                 1 days ago
